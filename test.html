@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script src="./js/shoppingcart.js"></script>
+    <script>
+         //创建一个购物车
+         var cart=new ShoppingCart();
+
+        cart.clearCart();
+
+        //创建一个商品
+        var product=new Product("01","面膜膜",'01.jpg',100 )
+
+        //创建一个订单
+
+        var order=new Order(product,3,true);
+
+        //将订单order置入购物车（本地存储）   
+        cart.addToCart(order); 
+
+        //又创建第二个商品
+        product=new Product('02','机器','02.jpg',50)
+
+        //又创建第二个商品
+      order=new Order(product,6,true);
+      cart.addToCart(order);
+      //第三个商品
+     product=new Product('03','垃圾','03.jpg',20)
+     //创建第三个订单
+     order=new Order(product,8,false);
+     //将新商品加入购物车（本地存储）
+     cart.addToCart(order);
+
+     console.log(cart.getSelectedQty());
+     console.log(cart.getSelectedAmount());
+      
+    </script>
+</body>
+</html>
